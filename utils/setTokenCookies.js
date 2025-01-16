@@ -7,8 +7,8 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
     maxAge: accessTokenMaxAge,
     httpOnly: true,
     secure: true,           // cookie is only sent over HTTPS
-    sameSite: 'None'        // for cross-origin requests
-    path: '/',
+    sameSite: 'None',        // for cross-origin requests
+    path: '/'
   });
 
   // Set Cookie for Refresh Token
@@ -16,8 +16,8 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
     maxAge: refreshTokenMaxAge,
     httpOnly: true,
     secure: true,           // cookie is only sent over HTTPS
-    sameSite: 'None'        // for cross-origin requests
-    path: '/',
+    sameSite: 'None',        // for cross-origin requests
+    path: '/'
   });
 
   // Set Cookie for is_auth (non-HTTP only, may be used client-side)
@@ -26,7 +26,7 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
   httpOnly: false,            // Accessible by client-side
   secure: true, // HTTPS in production
   sameSite: 'None',  
-    path: '/',
+  path: '/'
   });
 };
 
