@@ -21,9 +21,9 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
   // Set Cookie for is_auth (non-HTTP only, may be used client-side)
   res.cookie('isLoggedin', true, {
     maxAge: refreshTokenMaxAge,
-    httpOnly: false,        // accessible client-side
-    secure: true,          // not required for non-secure cookies
-     sameSite: 'None' 
+  httpOnly: false,            // Accessible by client-side
+  secure: process.env.NODE_ENV === 'production', // HTTPS in production
+  sameSite: 'None',  
   });
 };
 
