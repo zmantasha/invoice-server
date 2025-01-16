@@ -18,25 +18,25 @@ const DATABASE_URL = process.env.DATABASE_URL
 // Database Connection
 connectDB(DATABASE_URL)
 // Solve cors policy Error
-// const corsOptions={
-//     // set origin to a specific origin
-//     origin:process.env.FRONTEND_HOST,
-//     credentials:true,
-//     optionsSuccessStatus:200,
-// }
-const corsOptions = {
-  origin: (origin, callback) => {
-        const allowedOrigins = [`${process.env.FRONTEND_HOST}`, `${process.env.FRONTEND_SERVER_HOST}`];
-      if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-      } else {
-          callback(new Error('Not allowed by CORS'));
-      }
-  },
-  optionsSuccessStatus: 200,
-  credentials: true,
-};
-app.use(cors(corsOptions))
+const corsOptions={
+    // set origin to a specific origin
+    origin:process.env.FRONTEND_HOST,
+    credentials:true,
+    optionsSuccessStatus:200,
+}
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//         const allowedOrigins = [`${process.env.FRONTEND_HOST}`, `${process.env.FRONTEND_SERVER_HOST}`];
+//       if (!origin || allowedOrigins.includes(origin)) {
+//           callback(null, true);
+//       } else {
+//           callback(new Error('Not allowed by CORS'));
+//       }
+//   },
+//   optionsSuccessStatus: 200,
+//   credentials: true,
+// };
+// app.use(cors(corsOptions))
 
 
 
