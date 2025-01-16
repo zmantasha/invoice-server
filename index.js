@@ -23,6 +23,14 @@ const corsOptions={
     origin:process.env.FRONTEND_HOST,
     credentials:true,
     optionsSuccessStatus:200,
+    Headers: true,
+  exposedHeaders: 'Set-Cookie'
+  methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
+  allowedHeaders: [
+    'Access-Control-Allow-Origin',
+    'Content-Type',
+    'Authorization'
+  ]
 }
 // const corsOptions = {
 //   origin: (origin, callback) => {
