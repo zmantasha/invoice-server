@@ -8,6 +8,7 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
     httpOnly: true,
     secure: true,           // cookie is only sent over HTTPS
     sameSite: 'None'        // for cross-origin requests
+    path: '/',
   });
 
   // Set Cookie for Refresh Token
@@ -16,14 +17,16 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
     httpOnly: true,
     secure: true,           // cookie is only sent over HTTPS
     sameSite: 'None'        // for cross-origin requests
+    path: '/',
   });
 
   // Set Cookie for is_auth (non-HTTP only, may be used client-side)
   res.cookie('isLoggedin', true, {
     maxAge: refreshTokenMaxAge,
   httpOnly: false,            // Accessible by client-side
-  secure: process.env.NODE_ENV === 'production', // HTTPS in production
+  secure: true, // HTTPS in production
   sameSite: 'None',  
+    path: '/',
   });
 };
 
