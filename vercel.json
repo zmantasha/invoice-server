@@ -1,27 +1,11 @@
 {
+{
     "version": 2,
     "builds": [
-        {
-            "src": "index.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "routes/**/*.js",
-            "use": "@vercel/node"
-        }
+        { "src": "index.js", "use": "@vercel/node" }
     ],
     "routes": [
-        {
-            "src": "/api/v1/user/login",
-            "dest": "/routes/userRoutes.js"
-        },
-        {
-            "src": "/api/v1/invoice/(.*)",
-            "dest": "/routes/invoiceRoutes.js"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/index.js"
-        }
+        { "src": "/api/v1/user/(.*)", "dest": "index.js" },
+        { "src": "/api/v1/invoice/(.*)", "dest": "index.js" }
     ]
 }
