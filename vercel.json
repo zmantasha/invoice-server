@@ -12,7 +12,7 @@
     ],
     "routes": [
         {
-            "src": "/api/v1/user/(.*)",
+            "src": "/api/v1/user/login",
             "dest": "/routes/userRoutes.js"
         },
         {
