@@ -9,7 +9,7 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       secure: true,         // Cookie only sent over HTTPS
       sameSite: 'None',     // Allow cross-origin requests
       path: '/',            // The cookie is available for all routes
-      domain: 'localhost' // Set domain for Vercel frontend or use backend domain as fallback
+     
     });
   
     // Set cookie for Refresh Token
@@ -19,7 +19,7 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       secure: true,         // Cookie only sent over HTTPS
       sameSite: 'None',     // Allow cross-origin requests
       path: '/',
-      domain: 'localhost' // Adjust domain to match your frontend domain
+     
     });
   
     // Set cookie for isLoggedin (non-HTTP only, may be used client-side)
@@ -29,7 +29,6 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       secure: true,         // HTTPS in production
       sameSite: 'None',     // Allow cross-origin requests
       path: '/',
-      domain: 'localhost' // Match frontend domain for cookies
     });
 };
 
