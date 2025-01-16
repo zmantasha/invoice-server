@@ -23,7 +23,6 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
     maxAge: refreshTokenMaxAge,
     httpOnly: false,        // accessible client-side
     secure: false,          // not required for non-secure cookies
-    sameSite: 'None'        // ensure it's sent for cross-origin requests
   });
 };
 
