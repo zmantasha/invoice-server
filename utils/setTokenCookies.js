@@ -22,7 +22,8 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
   res.cookie('isLoggedin', true, {
     maxAge: refreshTokenMaxAge,
     httpOnly: false,        // accessible client-side
-    secure: false,          // not required for non-secure cookies
+    secure: true,          // not required for non-secure cookies
+     sameSite: 'None' 
   });
 };
 
