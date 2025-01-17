@@ -9,7 +9,7 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       secure: true,         // Cookie only sent over HTTPS
       sameSite: 'None',     // Allow cross-origin requests
       path: '/',            // The cookie is available for all routes
-      domain:"http://localhost:3000"
+     
     });
   
     // Set cookie for Refresh Token
@@ -19,7 +19,7 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       secure: true,         // Cookie only sent over HTTPS
       sameSite: 'None',     // Allow cross-origin requests
       path: '/',
-     domain:"http://localhost:3000"
+  
      
     });
   
@@ -30,7 +30,7 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       secure: true,         // HTTPS in production
       sameSite: 'None',     // Allow cross-origin requests
       path: '/',
-     domain:"http://localhost:3000"
+    
     });
 };
 
