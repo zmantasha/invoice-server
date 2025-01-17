@@ -9,6 +9,7 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       secure: true,         // Cookie only sent over HTTPS
       sameSite: 'none',     // Allow cross-origin requests
       // path: '/',            // The cookie is available for all routes
+        domain:"localhost"
     
     });
   
@@ -19,7 +20,7 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       secure: true,         // Cookie only sent over HTTPS
       sameSite: 'none',     // Allow cross-origin requests
       // path: '/',
-     
+      domain:"localhost"
     });
   
     // Set cookie for isLoggedin (non-HTTP only, may be used client-side)
@@ -27,8 +28,9 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       maxAge: refreshTokenMaxAge,
       httpOnly: false,      // Accessible by JavaScript client-side
       secure: true,         // HTTPS in production
-      // sameSite: 'none',     // Allow cross-origin requests
+      sameSite: 'none',     // Allow cross-origin requests
       // path: '/',
+         domain:"localhost"
     });
 };
 
