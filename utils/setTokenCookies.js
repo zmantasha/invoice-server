@@ -9,7 +9,6 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       secure: true,         // Cookie only sent over HTTPS
       sameSite: 'none',     // Allow cross-origin requests
       path: '/',            // The cookie is available for all routes
-     domain:"https://invoice-generator-1.vercel.app"
     });
   
     // Set cookie for Refresh Token
