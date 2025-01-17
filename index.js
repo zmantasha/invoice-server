@@ -38,7 +38,7 @@ connectDB(DATABASE_URL)
 // };
 // app.use(cors(corsOptions))
 app.use(cors({
-  origin: ['http://localhost:3000'],
+  origin: ['https://invoice-generator-1.vercel.app'],
   credentials:true,
 }))
 
