@@ -8,7 +8,7 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       httpOnly: true,       // Cookie accessible only by the server (cannot be accessed via JavaScript)
       secure: true,         // Cookie only sent over HTTPS
       sameSite: 'none',     // Allow cross-origin requests
-      path: '/',            // The cookie is available for all routes
+      // path: '/',            // The cookie is available for all routes
     
     });
   
@@ -18,7 +18,7 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       httpOnly: true,       // Cookie accessible only by the server
       secure: true,         // Cookie only sent over HTTPS
       sameSite: 'none',     // Allow cross-origin requests
-      path: '/',
+      // path: '/',
      
     });
   
@@ -27,8 +27,8 @@ const setTokensCookies = (res, accessToken, refreshToken, newAccessTokenExp, new
       maxAge: refreshTokenMaxAge,
       httpOnly: false,      // Accessible by JavaScript client-side
       secure: true,         // HTTPS in production
-      sameSite: 'none',     // Allow cross-origin requests
-      path: '/',
+      // sameSite: 'none',     // Allow cross-origin requests
+      // path: '/',
     });
 };
 
