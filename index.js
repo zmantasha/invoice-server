@@ -18,12 +18,12 @@ const DATABASE_URL = process.env.DATABASE_URL
 // Database Connection
 connectDB(DATABASE_URL)
 // Solve cors policy Error
-// const corsOptions={
-//     // set origin to a specific origin
-//     origin:process.env.FRONTEND_HOST,
-//     credentials:true,
-//     optionsSuccessStatus:200
-// }
+const corsOptions={
+    // set origin to a specific origin
+    origin:process.env.FRONTEND_HOST,
+    credentials:true,
+    optionsSuccessStatus:200
+}
 // const corsOptions = {
 //   origin: (origin, callback) => {
 //         const allowedOrigins = [`${process.env.FRONTEND_HOST}`, `${process.env.FRONTEND_SERVER_HOST}`];
@@ -36,11 +36,11 @@ connectDB(DATABASE_URL)
 //   optionsSuccessStatus: 200,
 //   credentials: true,
 // };
-// app.use(cors(corsOptions))
-app.use(cors({
-  origin: ['https://invoice-generator-1.vercel.app'],
-  credentials:true,
-}))
+app.use(cors(corsOptions))
+// app.use(cors({
+//   origin: ['https://invoice-generator-1.vercel.app'],
+//   credentials:true,
+// }))
 
 
 
