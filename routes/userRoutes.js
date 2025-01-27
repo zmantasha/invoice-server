@@ -6,6 +6,7 @@ const UserMiddleware = require("../middleware/userMiddleware");
 const passport= require("passport")
 const accessTokenAutoRefresh = require("../middleware/accessTokenAutoRefresh");
 const upload = require("../middleware/FileUploder");
+const singleUpload = require("../middleware/multer");
 const router= express.Router()
 
 const validateRegistrationUser=validateSchema(UserValidation.registrationValidateSchema)
@@ -20,7 +21,14 @@ router.post("/refresh-token", UserController.getNewAccessToken)
 router.get("/me",accessTokenAutoRefresh,passport.authenticate('jwt', { session: false }), UserController.userProfile)
 router.put("/me/:id",validateUpdateUser,accessTokenAutoRefresh,passport.authenticate('jwt', { session: false }),  UserController.updateProfile)
 router.put("/me/:id/avatar",validateUpdateFileUser,accessTokenAutoRefresh,passport.authenticate('jwt', { session: false }),upload.single("avatar"),  UserController.updateAvatarImage)
-router.put("/me/:id/logo",validateUpdateFileUser,accessTokenAutoRefresh,passport.authenticate('jwt', { session: false }),upload.single("logo"),  UserController.updateLogoImage)
+router.put(
+    "/me/logo/:id",
+    passport.authenticate("jwt", { session: false }),
+    verifyauthJwttoken,
+    singleUpload,
+    // validateUpdateFileUser,
+    UserController.updateLogoImage
+  );
 router.delete("/me/:id",accessTokenAutoRefresh,passport.authenticate('jwt', { session: false }),  UserController.deleteProfile)
 router.post("/logout",accessTokenAutoRefresh,passport.authenticate('jwt', { session: false }), UserController.userlogout)
 
